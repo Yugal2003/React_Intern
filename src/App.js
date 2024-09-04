@@ -1,5 +1,65 @@
+// redux start
+
+// import React from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+// import './App.css';
+// import { decrement, increment } from './components/Redux/Actions';
+
+
+// function App() {
+//   const countValue = useSelector((state) => state.count)
+//   const dispatch = useDispatch();
+//   return (
+//     <div>    
+//         <div>
+//             <h1>Counter App Redux</h1>
+//             <div>
+//               <button onClick={()=>dispatch(decrement())}>-</button>
+//               Count : {countValue}
+//               <button onClick={()=>dispatch(increment())}>+</button>
+//             </div>
+//         </div>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// redux end
+
+// redux toolkit start
+
+// import React from 'react';
+// import './App.css';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { decrement, increment } from './components/Redux_toolkit/CartSlice';
+
+
+// function App() {
+//   const countValue = useSelector((state) => state.counter.count);
+//   const dispatch = useDispatch();
+
+//   return (
+//     <div>    
+//         <div>
+//             <h1>Counter App Redux Toolkit</h1>
+//             <div>
+//               <button onClick={()=>dispatch(increment())}>-</button>
+//               Count : {countValue}
+//               <button onClick={()=>dispatch(decrement())}>+</button>
+//             </div>
+//         </div>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// redux toolkit end
+
+
 import './App.css';
-import PracticeOnlyUseCallback from './components/PracticeOnlyUseCallback';
+// import PracticeOnlyUseCallback from './components/PracticeOnlyUseCallback';
 // import PracticeOnlyUseMemo from './components/PracticeOnlyUseMemo';
 // import Practice from './components/PracticeOnlyUsestate';
 // import toast, { Toaster } from 'react-hot-toast';
@@ -27,7 +87,7 @@ function App() {
 
   return (
     <div>
-      <PracticeOnlyUseCallback/>
+      {/* <PracticeOnlyUseCallback/> */}
       {/* <PracticeOnlyUseMemo/> */}
       {/* useContext start */}
       {/* <fname.Provider value={name}>
@@ -75,9 +135,3 @@ function App() {
 
 // export  {fname,currage};
 export default App;
-
-
-
-
-
-
