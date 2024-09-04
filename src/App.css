@@ -1,0 +1,7 @@
+.list_li{
+    text-decoration: none;
+    color: black;
+}
+.list_li:hover{
+    color: red;
+}
