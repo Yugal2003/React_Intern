@@ -1,4 +1,6 @@
 import './App.css';
+import PracticeOnlyUseCallback from './components/PracticeOnlyUseCallback';
+// import PracticeOnlyUseMemo from './components/PracticeOnlyUseMemo';
 // import Practice from './components/PracticeOnlyUsestate';
 // import toast, { Toaster } from 'react-hot-toast';
 // import PracticeOnlyUseReducer from './components/PracticeOnlyUseReducer';
@@ -25,6 +27,8 @@ function App() {
 
   return (
     <div>
+      <PracticeOnlyUseCallback/>
+      {/* <PracticeOnlyUseMemo/> */}
       {/* useContext start */}
       {/* <fname.Provider value={name}>
         <currage.Provider value={age}>
@@ -71,3 +75,9 @@ function App() {
 
 // export  {fname,currage};
 export default App;
+
+
+
+
+
+
