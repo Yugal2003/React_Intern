@@ -59,11 +59,18 @@
 
 
 import './App.css';
+// import img1 from '../src/img/Slow-load-times-eCommerce.png'
+// import img2 from '../src/img/pc_2.jpeg'
+// import img3 from '../src/img/pc.png'
+// import img4 from '../src/img/home.jpeg'
 import Geekster from './components/Geekster_Assignment_Practice/Geekster'
 // import PracticeOnlyUseCallback from './components/PracticeOnlyUseCallback';
 // import PracticeOnlyUseMemo from './components/PracticeOnlyUseMemo';
 // import Practice from './components/PracticeOnlyUsestate';
 import toast, { Toaster } from 'react-hot-toast';
+// import Navbar from './components/Geekster_Assignment_Practice/Day-6/Navbar';
+// import MainPage from './components/Geekster_Assignment_Practice/Day-6/MainPage';
+// import { useState } from 'react';
 // import PracticeOnlyUseReducer from './components/PracticeOnlyUseReducer';
 // import PracticeOnlyUseEffect from './components/PracticeOnlyUseEffect';
 // import { BrowserRouter,Route,Router, Routes } from 'react-router-dom';
@@ -86,8 +93,50 @@ function App() {
   // let name = "Hello";
   // let age = 21;
 
+  // const [ products, setProducts] = useState([
+  //   {
+  //     id : 1,
+  //     img : img1,
+  //     title : "Samsung S8",
+  //     price : "300",
+  //     quantity : 0
+  //   },
+  //   {
+  //     id : 2,
+  //     img : img2,
+  //     title : "Google Pixel",
+  //     price : "400",
+  //     quantity : 0
+  //   },
+  //   {
+  //     id : 3,
+  //     img : img3,
+  //     title : "Redmi Note 2",
+  //     price : "600",
+  //     quantity : 0
+  //   },
+  //   {
+  //     id : 4,
+  //     img : img4,
+  //     title : "Samsung S7",
+  //     price : "500",
+  //     quantity : 0
+  //   }
+  // ]);
+
+  // const [quantity,setQuantity] = useState(0);
+
   return (
     <div>
+      {/* day 6 start */}
+      {/* <Navbar quantity={quantity}/>
+      <MainPage 
+      quantity={quantity}
+      setQuantity={setQuantity}
+      products={products}
+      setProducts={setProducts}
+      /> */}
+      {/* day 6 end */}
       <Geekster/>
       {/* <PracticeOnlyUseCallback/> */}
       {/* <PracticeOnlyUseMemo/> */}
