@@ -59,10 +59,11 @@
 
 
 import './App.css';
+import Geekster from './components/Geekster_Assignment_Practice/Geekster'
 // import PracticeOnlyUseCallback from './components/PracticeOnlyUseCallback';
 // import PracticeOnlyUseMemo from './components/PracticeOnlyUseMemo';
 // import Practice from './components/PracticeOnlyUsestate';
-// import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 // import PracticeOnlyUseReducer from './components/PracticeOnlyUseReducer';
 // import PracticeOnlyUseEffect from './components/PracticeOnlyUseEffect';
 // import { BrowserRouter,Route,Router, Routes } from 'react-router-dom';
@@ -87,6 +88,7 @@ function App() {
 
   return (
     <div>
+      <Geekster/>
       {/* <PracticeOnlyUseCallback/> */}
       {/* <PracticeOnlyUseMemo/> */}
       {/* useContext start */}
@@ -110,7 +112,7 @@ function App() {
       {/* <PracticeOnlyUseReducer/> */}
       {/* <PracticeOnlyUseEffect/> */}
       {/* <Practice/> */}
-      {/* <Toaster/> */}
+      <Toaster/>
 
       {/* implement routing start */}
 
