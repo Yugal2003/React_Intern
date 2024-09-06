@@ -296,86 +296,744 @@
 
 // Day 14 Home Work start
 
-import React, { useState } from 'react'
-import toast from 'react-hot-toast';
+// import React, { useState } from 'react'
+// import toast from 'react-hot-toast';
 
-const Geekster = () => {
+// const Geekster = () => {
 
-    const [inputValue,setInputValue] = useState("");
-    const [cost,setCost] = useState("");
-    const [array,setArray] = useState([]);
-    const [remaining,setRemaining] = useState(2000);
-    const [spant,setSpant] = useState(0);
+//     const [inputValue,setInputValue] = useState("");
+//     const [cost,setCost] = useState("");
+//     const [array,setArray] = useState([]);
+//     const [remaining,setRemaining] = useState(2000);
+//     const [spant,setSpant] = useState(0);
 
-    const addItems = () =>{
-        if(inputValue && cost){
-            let newItem = {newname : inputValue,newcost : cost}
-            setArray((array) => [...array,newItem])
-            console.log(array);
-            setRemaining((remaining) => remaining - cost)
-            setSpant((spant) => spant + cost)
-            setInputValue("");
-            setCost("");
-        }
-        else{
-            toast.error("Please Fill All Input Field !")
-        }
-    }
+//     const addItems = () =>{
+//         if(inputValue && cost){
+//             let newItem = {newname : inputValue,newcost : cost}
+//             setArray((array) => [...array,newItem])
+//             console.log(array);
+//             setRemaining((remaining) => remaining - cost)
+//             setSpant((spant) => spant + cost)
+//             setInputValue("");
+//             setCost("");
+//         }
+//         else{
+//             toast.error("Please Fill All Input Field !")
+//         }
+//     }
 
-    const clickSingleData = (id) =>{
-        const itemToDelete = array[id];
+//     const clickSingleData = (id) =>{
+//         const itemToDelete = array[id];
 
-        // Update remaining and spant when deleting an item
-        setRemaining((remaining) => remaining + itemToDelete.newcost);
-        setSpant((spant) => spant - itemToDelete.newcost);
-        setArray((array) =>array.filter((ele,index)=>index !== id));
-    }
-  return (
-    <div>
-        <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",minHeight:"30vh"}}>
-            <h1>My Budget Planner</h1>
-            <div style={{display:"flex",flexDirection:"row",gap:"1rem",marginTop:"1rem",width:"90vh",marginInline:"auto"}}>
-                <h2>Budget RS.2000</h2>
-                <h2>Remaining RS.{remaining}</h2>
-                <h2>Spant RS.{spant}</h2>
-            </div>
+//         // Update remaining and spant when deleting an item
+//         setRemaining((remaining) => remaining + itemToDelete.newcost);
+//         setSpant((spant) => spant - itemToDelete.newcost);
+//         setArray((array) =>array.filter((ele,index)=>index !== id));
+//     }
+//   return (
+//     <div>
+//         <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",minHeight:"30vh"}}>
+//             <h1>My Budget Planner</h1>
+//             <div style={{display:"flex",flexDirection:"row",gap:"3rem",justifyContent:"center",alignItems:"center",marginTop:"1rem",width:"90vh",marginInline:"auto"}}>
+//                 <h2>Budget RS.2000</h2>
+//                 <h2>Remaining RS.{remaining}</h2>
+//                 <h2>Spant RS.{spant}</h2>
+//             </div>
 
-            <div style={{marginTop:"3rem",width:"30vw"}}>
-                <h2 style={{textAlign:"center"}}>Expences</h2>
-                {
-                    array.length >=1 &&
-                    array.map((ele,index) =>{
-                        return(
-                            <div key={index} style={{marginTop:"1rem",display:"flex",justifyContent:"space-between"}}>
-                                <h2>{ele.newname}</h2>
-                                <h2>{ele.newcost}</h2>
-                                <button onClick={()=>clickSingleData(index)}>&#x274C;</button>
-                            </div>
-                        )
-                    })
-                }
-            </div>
+//             <div style={{marginTop:"3rem",width:"30vw"}}>
+//                 <h2 style={{textAlign:"center"}}>Expences</h2>
+//                 {
+//                     array.length >=1 &&
+//                     array.map((ele,index) =>{
+//                         return(
+//                             <div key={index} style={{marginTop:"1rem",display:"flex",justifyContent:"space-between"}}>
+//                                 <h2>{ele.newname}</h2>
+//                                 <h2>{ele.newcost}</h2>
+//                                 <button onClick={()=>clickSingleData(index)}>&#x274C;</button>
+//                             </div>
+//                         )
+//                     })
+//                 }
+//             </div>
             
 
-            <h2 style={{marginTop:"1rem"}}>Add Expenses</h2>
-            <div style={{display:"flex",marginTop:"1rem",flexDirection:"row",justifyContent:"center",alignItems:"center"}}>
-                <div style={{display:"flex",marginTop:"1rem",flexDirection:"row",gap:"1rem"}}>
-                    <div style={{display:"flex",flexDirection:"column"}}>
-                        <label>Name :</label>
-                        <input type='text' value={inputValue} onChange={(e)=>setInputValue(e.target.value)}/>
-                    </div>
-                    <div style={{display:"flex",flexDirection:"column"}}>
-                        <label>Cost :</label>
-                        <input type='number' value={cost} onChange={(e)=>setCost(parseInt(e.target.value))} />
-                    </div>
-                </div>
-            </div>
-            <button onClick={addItems} style={{marginTop:"1rem"}}>Save</button>
-        </div>
-    </div>
-  )
-}
+//             <h2 style={{marginTop:"1rem"}}>Add Expenses</h2>
+//             <div style={{display:"flex",marginTop:"1rem",flexDirection:"row",justifyContent:"center",alignItems:"center"}}>
+//                 <div style={{display:"flex",marginTop:"1rem",flexDirection:"row",gap:"1rem"}}>
+//                     <div style={{display:"flex",flexDirection:"column"}}>
+//                         <label>Name :</label>
+//                         <input type='text' value={inputValue} onChange={(e)=>setInputValue(e.target.value)}/>
+//                     </div>
+//                     <div style={{display:"flex",flexDirection:"column"}}>
+//                         <label>Cost :</label>
+//                         <input type='number' value={cost} onChange={(e)=>setCost(parseInt(e.target.value))} />
+//                     </div>
+//                 </div>
+//             </div>
+//             <button onClick={addItems} style={{marginTop:"1rem"}}>Save</button>
+//         </div>
+//     </div>
+//   )
+// }
 
-export default Geekster
+// export default Geekster
 
 // Day 14 Home Work end
+
+
+
+
+// practice for chatgpt code start
+
+
+// 1.back-color changer start
+
+
+//   back-color changer end
+// import React, { useState } from 'react'
+
+// const ChatGPT = () => {
+    
+//     const [color,setColor] = useState("white");
+
+//     const colorList = ["blue","black","orange","sky","cyan","yellow","grey","pink","purple","brown"];
+
+//     const changeBack = () =>{
+//         let newColor = colorList[Math.ceil(Math.random() * colorList.length)];
+//         setColor(newColor)
+//     }
+
+//   return (
+//     <div>
+//         <div style={{backgroundColor:color,border:"1px solid red",height:"30vh"}}>
+//             <button onClick={changeBack}>Back-Changer</button>
+//         </div>
+//     </div>
+//   )
+// }
+
+// export default ChatGPT
+
+// practice for chatgpt code end
+
+
+
+
+// react interview start 
+
+
+// import React, { useState } from 'react';
+
+// const ChatGPT = () => {
+//   const [array, setArray] = useState([]);
+//   const [step, setStep] = useState(1);
+//   const [formData, setFormData] = useState({
+//     name: '',
+//     email: '',
+//     dob: '',
+//     password: ''
+//   });
+
+//   const handleChange = (e) => {
+//     console.log(e);
+//     const { name, value } = e.target;
+//     setFormData({ ...formData, [name]: value });
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     // Check if all form fields are filled
+//     if (formData.name && formData.email && formData.dob && formData.password) {
+//       // Handle form submission, e.g., send data to server
+//       console.log(formData);
+//       setArray([...array, formData]);
+//       console.log("setArray", array);
+//       setFormData({ name: '', email: '', dob: '', password: '' });
+//       setStep(1); // Reset to the first step
+//     } 
+
+
+//   };
+
+//   const nextStep = () => {
+//     setStep(step + 1);
+//   };
+
+//   const prevStep = () => {
+//     setStep(step - 1);
+//   };
+
+//   const renderStep = () => {
+//     switch (step) {
+//       case 1:
+//         return (
+//           <div>
+//             <label>Name:</label>
+//             <input
+//             required
+//               type="text"
+//               name="name"
+//               value={formData.name}
+//               onChange={handleChange}
+//             />
+//             <button onClick={nextStep}>Next</button>
+//           </div>
+//         );
+//       case 2:
+//         return (
+//           <div>
+//             <label>Email:</label>
+//             <input
+//             required
+//               type="email"
+//               name="email"
+//               value={formData.email}
+//               onChange={handleChange}
+//             />
+//             <button onClick={nextStep}>Next</button>
+//             <button onClick={prevStep}>Back</button>
+//           </div>
+//         );
+//       case 3:
+//         return (
+//           <div>
+//             <label>Date of Birth:</label>
+//             <input
+//             required
+//               type="date"
+//               name="dob"
+//               value={formData.dob}
+//               onChange={handleChange}
+//             />
+//             <button onClick={nextStep}>Next</button>
+//             <button onClick={prevStep}>Back</button>
+//           </div>
+//         );
+//       case 4:
+//         return (
+//           <div>
+//             <label>Password:</label>
+//             <input
+//             required
+//               type="password"
+//               name="password"
+//               value={formData.password}
+//               onChange={handleChange}
+//             />
+//             <button onClick={handleSubmit}>Submit</button>
+//             <button onClick={prevStep}>Back</button>
+//           </div>
+//         );
+//       default:
+//         return null;
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <h2>Multi-Step Form</h2>
+//       <form onSubmit={handleSubmit}>
+//         {renderStep()}
+//       </form>
+
+//       {
+//         array.length > 0 && (
+//           <div>
+//             {array.map((item, index) => (
+//               <div key={index}>
+//                 <p>Name: {item.name}</p>
+//                 <p>Email: {item.email}</p>
+//                 <p>DOB: {item.dob}</p>
+//                 <p>Password: {item.password}</p>
+//               </div>
+//             ))}
+//           </div>
+//         ) 
+//       }
+//     </div>
+//   );
+// };
+
+// export default ChatGPT;
+
+
+// react interview end
+
+
+
+// cat image carousol start
+
+// import React, { useState } from 'react'
+
+// const Geekster = () => {
+
+//     const [image,setImage] = useState("");
+//     const array = [
+//         {
+//             img : "https://imgs.search.brave.com/bAdI7a7qnuuOIJphttt3DfbzLnCU7ZDMtnkejXq6UII/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9zdDIu/ZGVwb3NpdHBob3Rv/cy5jb20vMTAwMDkz/OC81NDk5L2kvNDUw/L2RlcG9zaXRwaG90/b3NfNTQ5OTg2MTMt/c3RvY2stcGhvdG8t/Z2luZ2VyLWNhdC5q/cGc"
+//         },
+//         {
+//             img : "https://imgs.search.brave.com/YzG9FgYN5qLWsiYyJ4dUEvxav9e98dBH0loR8YPRA1E/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTc0/ODc3NTY1L3Bob3Rv/L3BvcnRyYWl0LW9m/LWEtYnJvd24tY2F0/LWFnYWluc3QtYS1n/cmF5LWJhY2tncm91/bmQuanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPWlGcFFNSzlF/aTIzVm9XcExLa2Zh/TFVtdXN5Y3VaWllV/OWtWMjNzT2F6YzQ9"
+//         },
+//         {
+//             img : "https://imgs.search.brave.com/lZtf1S7JKFcaZs2lhxTpAtaJzTk_V35Xt8ys4htuVBU/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/Y2F0LXBvc2VzLXBl/cmZlY3RseS5qcGc_/d2lkdGg9MTAwMCZm/b3JtYXQ9cGpwZyZl/eGlmPTAmaXB0Yz0w"
+//         },
+//         {
+//             img : "https://imgs.search.brave.com/t6Nv0DwxoIACRxxtX2h7yt31ux5SCXHWgHVpoGh1diw/rs:fit:500:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAyLzM2Lzk5LzIy/LzM2MF9GXzIzNjk5/MjI4M19zTk94Q1ZR/ZUZMZDVwZHFhS0do/OERSR01aeTdQNFhL/bS5qcGc"
+//         }
+//     ];
+
+//   return (
+//     <div>
+//         <div>
+//             {
+//                 array.map((ele,index) =>{
+//                     return(
+//                         <img src={ele.img} alt='' width={"100"} onClick={()=>setImage(ele.img)}/>
+//                     )
+//                 })
+//             }<br/>
+//             <img src={image} width={"100"} alt=''/>
+//         </div>
+//     </div>
+//   )
+// }
+
+// export default Geekster
+
+
+// cat image carousol end
+
+
+//fruit project start
+
+// import React, { useState } from 'react'
+
+// const Geekster = () => {
+
+//     const initialFruits = [
+//         "Apple", "Apricot", "Avocado", "Banana", "Blackberry", "Blueberry", "Boysenberry", 
+//         "Cherry", "Coconut", "Cranberry", "Date", "Dragonfruit", "Durian", "Elderberry", 
+//         "Fig", "Gooseberry", "Grape", "Grapefruit", "Guava", "Honeydew", "Jackfruit", 
+//         "Kiwi", "Lemon", "Lime", "Lychee", "Mango", "Mangosteen", "Mulberry", "Nectarine", 
+//         "Orange", "Papaya", "Passionfruit", "Peach", "Pear", "Persimmon", "Pineapple", 
+//         "Plum", "Pomegranate", "Pomelo", "Raspberry", "Redcurrant", "Starfruit", 
+//         "Strawberry", "Tangerine", "Ugli fruit", "Watermelon", "Yellow Passion Fruit", 
+//         "Zucchini (Technically a fruit)"
+//       ];
+
+//       const [fruits,setFruits] = useState(initialFruits);
+//       const [array,setArray] = useState([])
+//       const [inputValue,setInputValue] = useState("");
+
+//       const filterOutData = fruits.filter((fruit) =>(
+//         fruit.toLowerCase().includes(inputValue.toLowerCase())
+//       ))
+
+//       const handleClickOnFruit = (fruitName) =>{
+//         if(!array.find((fruit) => fruit.name === fruitName)){
+//             setArray([...array,
+//                 {name : fruitName,linethrough : false}]
+//             );
+//             setInputValue("");
+//         }
+//       }
+
+//       const changeCheckBox = (fruitName) =>{
+//         const changeData = array.map((ele,index) =>(
+//             ele.name === fruitName
+//             ? {...ele,linethrough : !ele.linethrough}
+//             : ele
+//         ))
+//         setArray(changeData);
+//       }
+
+//       const handleDleteItem = (fruitName) =>{
+//         setArray((array) =>array.filter((ele,index) => ele.name !== fruitName))
+//       }
+
+//       const handleDleteItemAll = () =>{
+//         setArray([])
+//       }
+//   return (
+//     <div>
+//         <div>
+//             <label>Fruit Name : </label>
+//             <input placeholder='Search Fruit Name...' type='text' value={inputValue} onChange={(e)=>setInputValue(e.target.value)}/>
+//             {
+//                 inputValue &&
+//                 <ul>
+//                     {
+//                         filterOutData.map((ele,index) => {
+//                             return(
+//                                 <li onClick={()=>handleClickOnFruit(ele)}>{ele}</li>
+//                             )
+//                         })
+//                     }
+//                 </ul>
+//             }
+//             {
+//                 array.length >=1 &&
+//                 array.map((ele,index) =>{
+//                     return(
+//                         <div style={{display:"flex",gap:"1rem"}}>
+//                             <input type='checkbox' checked={ele.linethrough} onChange={()=>changeCheckBox(ele.name)}/>
+//                             <p style={{textDecoration : ele.linethrough ? "line-through" : 'none'}}>{ele.name}</p>
+//                             <button onClick={()=>handleDleteItem(ele.name)}>Delete</button>
+//                         </div>
+//                     )
+//                 })
+//             }
+//             {
+//                 array.length >=1 &&
+//                 <button onClick={handleDleteItemAll}>Remove All</button>
+//             }
+//         </div>
+//     </div>
+//   )
+// }
+
+// export default Geekster
+
+//fruit project end
+
+
+
+
+
+
+
+// bg-color change box start
+
+// import React, { useState } from 'react'
+
+// const ChatGPT = () => {
+//   const [inputValue, setInputValue] = useState("");
+//   const [getValue, setGetValue] = useState(0);
+
+//   const data = [
+//     {
+//       id: 1
+//     },
+//     {
+//       id: 2
+//     },
+//     {
+//       id: 3
+//     },
+//     {
+//       id: 4
+//     },
+//     {
+//       id: 5
+//     },
+//     {
+//       id: 6
+//     }
+//   ];
+
+//   const clickHandler = () => {
+//     setGetValue(inputValue);
+//   };
+
+//   const clearHandler = () => {
+//     setGetValue("white")
+//   };
+
+//   return (
+//     <div>
+//       <input
+//         type='number'
+//         max={"6"}
+//         min={"1"}
+//         value={inputValue}
+//         onChange={(e) => setInputValue(parseInt(e.target.value))}
+//       />
+//       <button onClick={clickHandler}>Click</button>
+//       <button onClick={clearHandler}>Clear</button>
+//       {
+//         data.map((item, index) => (
+//           <div
+//             style={{
+//               border: "1px solid black",
+//               width: "50px",
+//               height: "50px",
+//               backgroundColor: item.id === getValue ? "red" : "white"
+//             }}
+//             key={index}
+//           >
+//             {item.id}
+//           </div>
+//         ))
+//       }
+//     </div>
+//   );
+// };
+
+// export default ChatGPT;
+
+// bg-color change box end
+
+
+
+
+// pagination in react start
+
+// import React, {useState } from 'react'
+
+// const Geekster = () => {
+
+//     const array = [
+//                 {
+//                     id: 1,
+//                     food: "Pizza",
+//                     price: "10"
+//                 },
+//                 {
+//                     id: 2,
+//                     food: "Burger",
+//                     price: "20"
+//                 },
+//                 {
+//                     id: 3,
+//                     food: "Fries",
+//                     price: "30"
+//                 },
+//                 {
+//                     id: 4,
+//                     food: "Pasta",
+//                     price: "40"
+//                 },
+//                 {
+//                     id: 5,
+//                     food: "Salad",
+//                     price: "50"
+//                 },
+//                 {
+//                     id: 6,
+//                     food: "Tacos",
+//                     price: "15"
+//                 },
+//                 {
+//                     id: 7,
+//                     food: "Sushi",
+//                     price: "25"
+//                 },
+//                 {
+//                     id: 8,
+//                     food: "Sandwich",
+//                     price: "12"
+//                 },
+//                 {
+//                     id: 9,
+//                     food: "Steak",
+//                     price: "35"
+//                 },
+//                 {
+//                     id: 10,
+//                     food: "Chicken",
+//                     price: "18"
+//                 },
+//                 {
+//                     id: 11,
+//                     food: "Ice Cream",
+//                     price: "8"
+//                 },
+//                 {
+//                     id: 12,
+//                     food: "Cake",
+//                     price: "22"
+//                 },
+//                 {
+//                     id: 13,
+//                     food: "Pancakes",
+//                     price: "14"
+//                 },
+//                 {
+//                     id: 14,
+//                     food: "Spaghetti",
+//                     price: "16"
+//                 },
+//                 {
+//                     id: 15,
+//                     food: "Fried",
+//                     price: "13"
+//                 },
+//                 {
+//                     id: 16,
+//                     food: "Nachos",
+//                     price: "17"
+//                 },
+//                 {
+//                     id: 17,
+//                     food: "Hot Dog",
+//                     price: "11"
+//                 },
+//                 {
+//                     id: 18,
+//                     food: "Donut",
+//                     price: "7"
+//                 },
+//                 {
+//                     id: 19,
+//                     food: "Bagel",
+//                     price: "9"
+//                 },
+//                 {
+//                     id: 20,
+//                     food: "Smoothie",
+//                     price: "6"
+//                 },
+//                 {
+//                     id: 21,
+//                     food: "Burrito",
+//                     price: "19"
+//                 },
+//                 {
+//                     id: 22,
+//                     food: "Ramen",
+//                     price: "23"
+//                 },
+//                 {
+//                     id: 23,
+//                     food: "Quesala",
+//                     price: "21"
+//                 },
+//                 {
+//                     id: 24,
+//                     food: "Crepe",
+//                     price: "20"
+//                 },
+//                 {
+//                     id: 25,
+//                     food: "Falafel",
+//                     price: "15"
+//                 }
+//             ];
+
+//     const [data,setData] = useState(array);
+
+
+//     const [currentPage,setCurrentPage] = useState(1);
+
+//     const itemPerPage = 6;
+//     let lastIndex = itemPerPage * currentPage;
+//     let firstIndex = lastIndex - itemPerPage;
+//     let pagePerItem = data.slice(firstIndex,lastIndex);
+
+//     let paginate = currentPage => setCurrentPage(currentPage);
+
+//     let totalPage = Math.ceil(data.length / itemPerPage);
+
+//     const pageButtons = [];
+//   for (let i = 1; i <= totalPage; i++) {
+//     pageButtons.push(
+//       <button
+//       style={{padding:"0.3rem"}}
+//         key={i}
+//         onClick={()=>paginate(i)}
+//       >
+//         {i}
+//       </button>)}
+
+//   return (
+//     <div style={{width:"100vw",display:"flex",flexDirection:"column",justifyContent:"center"}}>
+//         <div style={{display:"flex",justifyContent:"center"}}>
+//             <button disabled={currentPage === 1} onClick={()=>paginate(currentPage - 1)}>Prev</button>
+//             {pageButtons}
+//             <button disabled={currentPage === totalPage} onClick={()=>paginate(currentPage + 1)}>Next</button>
+//         </div>
+//         <div style={{width:"80vw",display:"inline-block",flexDirection:"row",justifyContent:"center",alignItems:"center",marginInline:"auto"}}>
+//             {
+//                 pagePerItem.length >=1 &&
+//                 pagePerItem.map((ele,index) =>{
+//                     return(
+//                         <div style={{width:"33%",height:"350px",display:"inline-block",flexDirection:"row",justifyContent:"center",marginInline:"auto",alignItems:"center",border:"1px solid red",padding:"8rem",textAlign:"center"}}>
+//                             <h3>{ele.title}</h3>
+//                             <img style={{marginTop:"2rem"}} height={80} width={60} src={ele.image} alt=''/>
+//                             <div style={{display:"flex",flexDirection:"row",width:"100vw",gap:"1rem",marginTop:"2rem",textAlign:"center"}}>
+//                                 <h3>Rating :{ele.food}</h3>
+//                                 <h3>Price : {ele.price}</h3>
+//                             </div>
+//                         </div>
+//                     )
+//                 })
+//             }
+//         </div>
+//     </div>
+//   )
+// }
+
+// export default Geekster
+
+
+
+// pagination in react end
+
+
+
+
+
+
+
+// crud operation in react start
+
+// import React, { useState } from 'react'
+// import toast from 'react-hot-toast';
+
+// const Geekster = () => {
+
+//     const [inputValue,setInputValue] = useState("");
+//     const [array,setArray] = useState([]);
+//     const [editIndex,setEditIndex] = useState(null);
+
+//     const handleSubmit = () =>{
+//         if(editIndex !== null){
+//             let newData = array.map((ele,index) =>(
+//                 index === editIndex ? inputValue : ele
+//             ))
+//             setArray(newData)
+//             setEditIndex(null)
+//         }
+//         else{
+//             setArray([...array,inputValue]);
+//         }
+//         setInputValue("");
+//     }
+
+//     const editIndexText = (index) =>{
+//         setInputValue(array[index]);
+//         setEditIndex(index);
+//     }
+//     const clickDelete = (id) =>{
+//         setArray((array) =>array.filter((ele,index) =>index !== id));
+//     }
+//     const handleRemoveAll = () =>{
+//         setArray([]);
+//     }
+//   return (
+//     <div>
+//         <div>
+//             <input type='text' value={inputValue} onChange={(e)=>setInputValue(e.target.value)} placeholder='Enter hear...'/>
+//             <button onClick={handleSubmit}>{editIndex === null ? "Submit" : "Update"}</button>
+//             {array.length >=1 && <button onClick={handleRemoveAll}>Remove All</button>}
+//         </div>
+//         {
+//             array.length >= 1 &&
+//             array.map((ele,index) =>{
+//                 return(
+//                     <div style={{display:"flex",gap:"1rem"}}>
+//                         <p>{ele}</p>
+//                         <button onClick={()=>editIndexText(index)}>Edit</button>
+//                         <button onClick={()=>clickDelete(index)}>Delete</button>
+//                     </div>
+//                 )
+//             })
+//         }
+//     </div>
+//   )
+// }
+
+// export default Geekster
+
+// crud operation in react end
