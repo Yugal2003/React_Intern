@@ -1,3 +1,28 @@
+//todo start
+
+import React from 'react';
+import './App.css';
+import Crud from './components/CRUD_OPERATION WITH AXIOS/Crud';
+// import Div1Show from './components/Div1Show';
+
+function App() {
+  return (
+    <div>    
+          <Crud/>
+         {/* <Div1Show/> */}
+    </div>
+  );
+}
+
+export default App;
+
+//todo end
+
+
+
+
+
+
 // redux start
 
 // import React from 'react';
@@ -58,16 +83,17 @@
 // redux toolkit end
 
 
-import './App.css';
+// import './App.css';
 // import img1 from '../src/img/Slow-load-times-eCommerce.png'
 // import img2 from '../src/img/pc_2.jpeg'
 // import img3 from '../src/img/pc.png'
 // import img4 from '../src/img/home.jpeg'
-import Geekster from './components/Geekster_Assignment_Practice/Geekster'
+// import Geekster from './components/Geekster_Assignment_Practice/Geekster'
 // import PracticeOnlyUseCallback from './components/PracticeOnlyUseCallback';
 // import PracticeOnlyUseMemo from './components/PracticeOnlyUseMemo';
 // import Practice from './components/PracticeOnlyUsestate';
-import toast, { Toaster } from 'react-hot-toast';
+// import toast, { Toaster } from 'react-hot-toast';
+// import TodoApp from './components/TodoList/TodoApp';
 // import Navbar from './components/Geekster_Assignment_Practice/Day-6/Navbar';
 // import MainPage from './components/Geekster_Assignment_Practice/Day-6/MainPage';
 // import { useState } from 'react';
@@ -89,7 +115,7 @@ import toast, { Toaster } from 'react-hot-toast';
 // const fname = createContext();
 // const currage = createContext();
 
-function App() {
+// function App() {
   // let name = "Hello";
   // let age = 21;
 
@@ -126,8 +152,8 @@ function App() {
 
   // const [quantity,setQuantity] = useState(0);
 
-  return (
-    <div>
+  // return (
+  //   <div>
       {/* day 6 start */}
       {/* <Navbar quantity={quantity}/>
       <MainPage 
@@ -137,7 +163,7 @@ function App() {
       setProducts={setProducts}
       /> */}
       {/* day 6 end */}
-      <Geekster/>
+      {/*<Geekster/>*/}
       {/* <PracticeOnlyUseCallback/> */}
       {/* <PracticeOnlyUseMemo/> */}
       {/* useContext start */}
@@ -161,7 +187,7 @@ function App() {
       {/* <PracticeOnlyUseReducer/> */}
       {/* <PracticeOnlyUseEffect/> */}
       {/* <Practice/> */}
-      <Toaster/>
+      // <Toaster/>
 
       {/* implement routing start */}
 
@@ -179,10 +205,10 @@ function App() {
       </BrowserRouter>       */}
 
        {/* implement routing end */}
-    </div>
-  );
-}
+//     </div>
+//   );
+// }
 
 
 // export  {fname,currage};
-export default App;
+// export default App;

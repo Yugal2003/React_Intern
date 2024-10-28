@@ -1,0 +1,15 @@
+body {
+    background-color: rgb(250, 249, 243);
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+  }
+  
+  /* (Keep the rest of your existing CSS styles here) */
+  
